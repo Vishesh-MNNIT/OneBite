@@ -25,12 +25,13 @@ app.use(cookieParser())
 //routes import
 
 import userRouter from "./routes/user.routes.js"
-
+import ownerRouter from "./routes/owner.routes.js"
 //routes declaration 
 
 
 
 app.use("/api/v1/users",userRouter);
+app.use("/api/v1/owners",ownerRouter);
 
 
 // http://localhost:8000/api/v1/users
