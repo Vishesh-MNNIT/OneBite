@@ -1,0 +1,50 @@
+.parent-container {
+  height: 100vh;
+}
+.parts {
+  height: 100%;
+}
+.part1 {
+  height: 100%;
+  width: 50%;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+
+.part2 {
+  height: 100%;
+  width: 50%;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to left, #92fe9d, #00c9ff);
+  background: linear-gradient(to left, #92fe9d, #00c9ff);
+}
+
+.imageSet {
+  height: 70%;
+  width: 70%;
+}
+
+.seperator-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.seperator-text span {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 40px;
+  font-weight: bold;
+}
+.buyer-text {
+  position: absolute;
+  color: white;
+  top: 70%;
+}
+.owner-text {
+  position: absolute;
+  color: white;
+  top: 10%;
+}

@@ -1,0 +1,51 @@
+/* Style for the overall container */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+
+/* Style for the signup form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; /* Adjust as needed */
+}
+
+/* Style for the labels */
+.signup-form label {
+  margin-bottom: 5px; /* Adjust spacing between labels and inputs */
+}
+
+/* Style for the inputs */
+.signup-form input {
+  margin-bottom: 10px; /* Adjust spacing between inputs */
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style for the button */
+.signup-form button {
+  margin-top: 10px; /* Adjust spacing between button and inputs */
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff; /* Adjust button color */
+  color: #fff; /* Adjust button text color */
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: Style for links or additional text */
+.signup-form p {
+  margin-top: 10px; /* Adjust spacing between button and additional text */
+}
+
+.signup-form p a {
+  color: #007bff; /* Adjust link color */
+  text-decoration: none;
+}
