@@ -31,8 +31,14 @@ const BuyerSignup = () => {
       );
       const json = await response.json();
       console.log(json);
-      if (json.statusCode !== 200) {
-        alert("UserName Already Exist");
+      if (json.statusCode === 400) {
+        alert("All Field are required");
+      } else if (json.statusCode === 403) {
+        alert("User already Exist");
+      } else if (json.statusCode === 500) {
+        alert("Something went wrong while registering the user");
+      } else if (json.statusCode === 200) {
+        alert("User registered successfully");
       }
     } catch (error) {
       alert("Invalid credentials");

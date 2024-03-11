@@ -1,5 +1,4 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import { User } from "../models/user.model.js";
 
@@ -17,7 +16,10 @@ const registerUser = asyncHandler(async (req, res) => {
   if (
     [fullName, email, username, password].some((field) => field?.trim() === "")
   ) {
-    throw new ApiError(400, "All fields are required");
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required",
+    });
   }
 
   //    // validate email address
@@ -31,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (existedUser) {
-    return res.status(400).json({
+    return res.status(403).json({
       success: false,
       message: "User Already exist",
     });
@@ -50,7 +52,10 @@ const registerUser = asyncHandler(async (req, res) => {
   );
 
   if (!createdUser) {
-    throw new ApiError(500, "Something went wrong while registering the user");
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong while registering the user",
+    });
   }
 
   // returning response
@@ -83,7 +88,10 @@ const loginUser = asyncHandler(async (req, res) => {
   const isPasswordValid = await user.isPasswordCorrect(password);
 
   if (!isPasswordValid) {
-    throw new ApiError(401, "Invalid user credentials");
+    return res.status(401).json({
+      success: false,
+      message: "Invalid User Credentials",
+    });
   }
 
   return res
