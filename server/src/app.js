@@ -34,10 +34,12 @@ app.use(cookieParser());
 
 import userRouter from "./routes/user.routes.js";
 import ownerRouter from "./routes/owner.routes.js";
+import shopRouter from "./routes/shop.routes.js";
 //routes declaration
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/owners", ownerRouter);
+app.use("/api/v1/shopKeeper", shopRouter);
 
 // http://localhost:8000/api/v1/users
 

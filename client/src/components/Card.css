@@ -8,8 +8,8 @@
 }
 
 .card-image {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
 }
 
 .card-content {
