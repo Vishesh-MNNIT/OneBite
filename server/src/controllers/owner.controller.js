@@ -5,6 +5,7 @@ import { Owner } from "../models/owner.model.js";
 const registerOwner = asyncHandler(async (req, res) => {
   const { email, password, confirmPassword } = req.body;
 
+  console.log(req.body);
   if (!email) {
     return res.status(400).json({
       success: false,
@@ -19,9 +20,7 @@ const registerOwner = asyncHandler(async (req, res) => {
     });
   }
 
-  const existedUser = await Owner.findOne({
-    email,
-  });
+  const existedUser = await Owner.findOne({ email });
 
   if (existedUser) {
     return res.status(409).json({
@@ -33,6 +32,7 @@ const registerOwner = asyncHandler(async (req, res) => {
   const owner = await Owner.create({
     email: email,
     password: password,
+    confirmPassword: confirmPassword,
   });
 
   const createdUser = await Owner.findById(owner._id).select(
@@ -61,9 +61,7 @@ const loginOwner = asyncHandler(async (req, res) => {
     });
   }
 
-  const owner = await Owner.findOne({
-    $or: [{ username }, { email }],
-  });
+  const owner = await Owner.findOne({ email });
 
   if (!owner) {
     return res.status(404).json({

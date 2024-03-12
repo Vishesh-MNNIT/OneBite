@@ -1,0 +1,14 @@
+.containerDemo {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

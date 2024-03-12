@@ -1,0 +1,73 @@
+.MainDiv {
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 3px solid #3c3b3b;
+  border-radius: 5px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 8px 15px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.dish-container {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.dish-container > div {
+  margin-bottom: 10px;
+}
+
+.dish-container input[type="file"],
+.dish-container input[type="text"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 5px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+
+.dish-container button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #050000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dish-container button:hover {
+  background-color: #c82333;
+}

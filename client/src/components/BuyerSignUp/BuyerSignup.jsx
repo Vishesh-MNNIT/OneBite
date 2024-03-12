@@ -1,6 +1,6 @@
 import React from "react";
 import "./BuyerSignup.css"; // Import the CSS file
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const BuyerSignup = () => {
@@ -39,6 +39,7 @@ const BuyerSignup = () => {
         alert("Something went wrong while registering the user");
       } else if (json.statusCode === 200) {
         alert("User registered successfully");
+        //useNavigate(/login)
       }
     } catch (error) {
       alert("Invalid credentials");

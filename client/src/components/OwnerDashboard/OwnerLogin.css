@@ -1,50 +1,65 @@
-/* Style for the overall container */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* background-color: #f9f9f9; */
+  width: 300px;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
 }
 
-/* Style for the login form */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px; /* Adjust as needed */
+.login-container h2 {
+  margin-bottom: 15px;
 }
 
-/* Style for the labels */
-.login-form label {
-  margin-bottom: 5px; /* Adjust spacing between labels and inputs */
+.login-container label {
+  margin-bottom: 5px;
 }
 
-/* Style for the inputs */
-.login-form input {
-  margin-bottom: 10px; /* Adjust spacing between inputs */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
   padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Style for the button */
-.login-form button {
-  margin-top: 10px; /* Adjust spacing between button and inputs */
-  padding: 10px;
+.login-container button {
   width: 100%;
-  background-color: #007bff; /* Adjust button color */
-  color: #fff; /* Adjust button text color */
+  padding: 8px 0;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* Style for the signup link */
-.login-form p {
-  margin-top: 10px; /* Adjust spacing between button and signup link */
+.login-container button:hover {
+  background-color: #0056b3;
 }
 
-.login-form p a {
-  color: #007bff; /* Adjust link color */
-  text-decoration: none;
+.login-container p {
+  margin-top: 15px;
+}
+
+.login-container p a {
+  color: #007bff;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+.ownerMainDiv {
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
 }
 
 .ownerMainDiv {
