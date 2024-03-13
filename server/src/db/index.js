@@ -12,7 +12,7 @@ const connectDB = async () => {
     const item = await Item.find();
     global.Item = item;
     const shop = await OwnerInfo.find();
-    console.log(shop);
+    // console.log(shop);
     global.shopKeeperInfo = shop;
     const ojhaItems = await Item.find({
       shopkeeperId: "65ef36a355e57b08e15d4742",
