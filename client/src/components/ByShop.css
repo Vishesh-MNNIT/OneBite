@@ -1,0 +1,13 @@
+/* ByShop.css */
+.shop-container {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px; */
+  display: flex;
+  flex-direction: column;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
