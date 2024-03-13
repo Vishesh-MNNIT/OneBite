@@ -10,6 +10,9 @@ import OwnerSignup from "./components/OwnerSignup/OwnerSignup.jsx";
 import OwnerForm from "./components/OwnerDashboard/OwnerForm.jsx";
 import BuyerMain from "./components/BuyerMain/BuyerMain.jsx";
 import Demo from "./components/Demo.jsx";
+import ByShop from "./components/ByShop.jsx";
+import MainShop from "./components/Shops/MainShop.jsx";
+import OwnerAddItems from "./components/OwnerDashboard/OwnerAddItems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,19 @@ const router = createBrowserRouter([
   {
     path: "demo",
     element: <Demo />,
+  },
+  {
+    path: "byshop",
+    element: <ByShop />,
+  },
+
+  {
+    path: "mainshop",
+    element: <MainShop />,
+  },
+  {
+    path: "owneradditems",
+    element: <OwnerAddItems />,
   },
 ]);
 
