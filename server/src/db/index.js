@@ -5,25 +5,29 @@ import { Item } from "../models/item.model.js";
 const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
-     ` ${process.env.MONGODB_URL}/${DB_NAME}`
+      `${process.env.MONGODB_URL}/${DB_NAME}`
     );
+    // console.log(connectionInstance);
+    //console.log(\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host});
     const item = await Item.find();
     global.Item = item;
-    
+    // console.log(item);
     const shop = await OwnerInfo.find();
+    // console.log(shop);
     global.shopKeeperInfo = shop;
 
-    const shopkeepers = await OwnerInfo.find();
-    const shopkeeperIds = shopkeepers.map((shopkeeper) => shopkeeper._id);
-
+    const shopKeepers = await OwnerInfo.find();
+    const shopKeeperIds = shopKeepers.map((shopkeeper) => shopkeeper._id);
+    // console.log(shopKeeperIds)
     const itemsByShopkeeper = {};
     let index = 0;
-    for (const shopkeeperId of shopkeeperIds) {
-      const items = await Item.find({ shopkeeperId });
+    for (const shopKeeperId of shopKeeperIds) {
+      //console.log(shopKeeperId)
+      const items = await Item.find({ shopkeeperId: shopKeeperId });
+      //console.log(items);
       itemsByShopkeeper[index] = items;
       index++;
     }
-
     global.items = itemsByShopkeeper;
     console.log(global.items[0]);
   } catch (error) {
