@@ -1,32 +1,71 @@
+/* Card.css */
 .card {
-  width: 25%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 300px;
+  margin: 20px;
+  margin-bottom: 0px;
+}
+
+.card:hover {
+  box-shadow: 0 400px 800px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
-  width: 100%; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
+  height: 50%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card-content {
-  padding: 10px;
+  padding: 20px;
 }
 
 .card-title {
-  font-size: 18px;
-  margin: 0;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
 .card-price {
-  font-size: 16px;
-  margin: 5px 0 0 0;
+  font-size: 1em;
+  margin-bottom: 5px;
 }
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+
+.shop-name {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.quantity-controls button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.quantity {
+  font-size: 1em;
+  margin: 0 10px;
+}
+
+.add-to-cart-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
 }

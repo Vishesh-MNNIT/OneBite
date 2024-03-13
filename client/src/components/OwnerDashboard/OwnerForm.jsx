@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./OwnerForm.css";
+import { Link } from "react-router-dom";
 
 const OwnerForm = () => {
   const [formData, setFormData] = useState({
@@ -39,51 +40,11 @@ const OwnerForm = () => {
     <div className="MainDiv">
       <form className="form-container" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={(e) => handleChange(e, null, null)}
-          />
-        </div>
-        <div>
-          <label htmlFor="aadharNumber">Aadhar Number:</label>
-          <input
-            type="text"
-            id="aadharNumber"
-            name="aadharNumber"
-            value={formData.aadharNumber}
-            onChange={(e) => handleChange(e, null, null)}
-          />
-        </div>
-        <div>
-          <label htmlFor="shopName">Shop Name:</label>
-          <input
-            type="text"
-            id="shopName"
-            name="shopName"
-            value={formData.shopName}
-            onChange={(e) => handleChange(e, null, null)}
-          />
-        </div>
-        <div>
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={(e) => handleChange(e, null, null)}
-          />
-        </div>
-        <div>
-          <label className="dish-label">Dishes:</label>
+          <label className="dish-label">Shop Information:</label>
           {formData.dishes.map((dish, index) => (
             <div className="dish-container" key={index}>
               <div>
-                <label htmlFor={`photo${index}`}>Photo:</label>
+                <label htmlFor={`photo${index}`}>Shop Image:</label>
                 <input
                   type="file"
                   id={`photo${index}`}
@@ -91,7 +52,7 @@ const OwnerForm = () => {
                 />
               </div>
               <div>
-                <label htmlFor={`name${index}`}>Name:</label>
+                <label htmlFor={`name${index}`}>Shop Name:</label>
                 <input
                   type="text"
                   id={`name${index}`}
@@ -99,15 +60,7 @@ const OwnerForm = () => {
                   onChange={(e) => handleChange(e, index, "name")}
                 />
               </div>
-              <div>
-                <label htmlFor={`price${index}`}>Price:</label>
-                <input
-                  type="text"
-                  id={`price${index}`}
-                  value={dish.price}
-                  onChange={(e) => handleChange(e, index, "price")}
-                />
-              </div>
+
               <button
                 className="remove-button"
                 type="button"
@@ -117,12 +70,12 @@ const OwnerForm = () => {
               </button>
             </div>
           ))}
-          <button className="add-button" type="button" onClick={handleAddDish}>
+          {/* <button className="add-button" type="button" onClick={handleAddDish}>
             Add Dish
-          </button>
+          </button> */}
         </div>
         <button className="submit-button" type="submit">
-          Submit
+          <Link to="/owneradditems">Add More Dishes</Link>
         </button>
       </form>
     </div>
