@@ -2,6 +2,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import { Owner } from "../models/owner.model.js";
 
+
 const registerOwner = asyncHandler(async (req, res) => {
   const { email, password, confirmPassword } = req.body;
 
@@ -89,5 +90,8 @@ const logoutOwner = asyncHandler(async (req, res) => {
     .status(201)
     .json(new ApiResponse(200, {}, "User Logout Successfully"));
 });
+
+
+
 
 export { registerOwner, loginOwner, logoutOwner };
