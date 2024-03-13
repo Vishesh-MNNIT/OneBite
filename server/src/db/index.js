@@ -5,10 +5,11 @@ import { Item } from "../models/item.model.js";
 const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
-      `${process.env.MONGODB_URL}/${DB_NAME}`
+     ` ${process.env.MONGODB_URL}/${DB_NAME}`
     );
     const item = await Item.find();
     global.Item = item;
+    
     const shop = await OwnerInfo.find();
     global.shopKeeperInfo = shop;
 
