@@ -44,28 +44,28 @@ const OwnerForm = () => {
           {formData.dishes.map((dish, index) => (
             <div className="dish-container" key={index}>
               <div>
-                <label htmlFor={name${index}}>Name:</label>
+                <label htmlFor={`name${index}`}>Name:</label>
                 <input
                   type="text"
-                  id={name${index}}
+                  id={`name${index}`}
                   value={dish.name}
                   onChange={(e) => handleChange(e, index, "name")}
                 />
               </div>
               <div>
-                <label htmlFor={price${index}}>Price:</label>
+                <label htmlFor={`price${index}`}>Price:</label>
                 <input
                   type="text"
-                  id={price${index}}
+                  id={`price${index}`}
                   value={dish.price}
                   onChange={(e) => handleChange(e, index, "price")}
                 />
               </div>
               <div>
-                <label htmlFor={photo${index}}>Item Image:</label>
+                <label htmlFor={`photo${index}`}>Item Image:</label>
                 <input
                   type="file"
-                  id={photo${index}}
+                  id={`photo${index}`}
                   onChange={(e) => handleChange(e, index, "photo")}
                 />
               </div>
