@@ -40,27 +40,35 @@ const OwnerForm = () => {
     <div className="MainDiv">
       <form className="form-container" onSubmit={handleSubmit}>
         <div>
-          <label className="dish-label">Shop Information:</label>
+          <label className="dish-label">Items:</label>
           {formData.dishes.map((dish, index) => (
             <div className="dish-container" key={index}>
               <div>
-                <label htmlFor={`photo${index}`}>Shop Image:</label>
-                <input
-                  type="file"
-                  id={`photo${index}`}
-                  onChange={(e) => handleChange(e, index, "photo")}
-                />
-              </div>
-              <div>
-                <label htmlFor={`name${index}`}>Shop Name:</label>
+                <label htmlFor={name${index}}>Name:</label>
                 <input
                   type="text"
-                  id={`name${index}`}
+                  id={name${index}}
                   value={dish.name}
                   onChange={(e) => handleChange(e, index, "name")}
                 />
               </div>
-
+              <div>
+                <label htmlFor={price${index}}>Price:</label>
+                <input
+                  type="text"
+                  id={price${index}}
+                  value={dish.price}
+                  onChange={(e) => handleChange(e, index, "price")}
+                />
+              </div>
+              <div>
+                <label htmlFor={photo${index}}>Item Image:</label>
+                <input
+                  type="file"
+                  id={photo${index}}
+                  onChange={(e) => handleChange(e, index, "photo")}
+                />
+              </div>
               <button
                 className="remove-button"
                 type="button"
@@ -70,12 +78,9 @@ const OwnerForm = () => {
               </button>
             </div>
           ))}
-          {/* <button className="add-button" type="button" onClick={handleAddDish}>
-            Add Dish
-          </button> */}
         </div>
         <button className="submit-button" type="submit">
-          <Link to="/owneradditems">Add More Dishes</Link>
+          <Link to="/owneradditems">Add more Dish</Link>
         </button>
       </form>
     </div>
