@@ -28,18 +28,20 @@ function ByShop() {
   }, []);
 
   return (
-    <div className="shop-container ">
-      <div className="card-container">
-        {items.map((item, index) => (
-          <Card2
-            index={index}
-            key={item._id}
-            imageSrc={item.image}
-            shopName={item.name}
-          />
-        ))}
+    <>
+      <div className="shop-container ">
+        <div className="card-container">
+          {items.map((item, index) => (
+            <Card2
+              index={index}
+              key={item._id}
+              imageSrc={item.image}
+              shopName={item.name}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
