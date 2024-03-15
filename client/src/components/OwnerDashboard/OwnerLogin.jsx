@@ -50,9 +50,18 @@ function OwnerLogin() {
       <div className="parent-container">
         <div className="d-flex parts">
           <div className="part1 d-flex justify-content-center align-item-center">
-            {/* <h1 className="buyer-text">BUYER</h1> */}
+            <div
+              className="owner-text"
+              style={{ color: "black", fontFamily: "cursive" }}
+            >
+              <h4>
+                Welcome, esteemed shopkeeper, to your culinary kingdom! As you
+                log in to your account, envision the bustling energy of your
+                kitchen.
+              </h4>
+            </div>
             <div>
-              <img className="imageSet mt-5" src={img2} alt="" />
+              <img className="ownerImageSet mt-5" src={img2} alt="" />
             </div>
           </div>
 
@@ -89,7 +98,20 @@ function OwnerLogin() {
               </form>
 
               <p>
-                Create a New Account <Link to="/ownersign">SIGN UP</Link>
+                Create a New Account
+                <button>
+                  {" "}
+                  <Link
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                    }}
+                    to="/ownersign"
+                  >
+                    SIGN UP
+                  </Link>
+                </button>
               </p>
             </div>
             <h1 className="owner-text"></h1>

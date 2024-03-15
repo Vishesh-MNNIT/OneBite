@@ -1,55 +1,78 @@
-.parent-container {
-    height: 100vh;
+.parentDivide {
+  height: 50vh;
+  margin-top: 50px;
+  padding: 20px;
 }
 
-.parts {
-    height: 100%;
+.partsDivide {
+  height: 100%;
+  display: flex;
 }
 
-.part1 {
-    height: 100%;
-    width: 50%;
-    background: #00c9ff;
-    background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
-    background: linear-gradient(to right, #92fe9d, #00c9ff);
+.part1Divide {
+  height: 100%;
+  width: 50%;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+  position: relative;
+  overflow: hidden; /* Ensure the overflowed image doesn't protrude */
 }
 
-.part2 {
-    height: 100%;
-    width: 50%;
-    background: #00c9ff;
-    background: -webkit-linear-gradient(to left, #92fe9d, #00c9ff);
-    background: linear-gradient(to left, #92fe9d, #00c9ff);
+.part2Divide {
+  height: 100%;
+  width: 50%;
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to left, #92fe9d, #00c9ff);
+  background: linear-gradient(to left, #92fe9d, #00c9ff);
+  position: relative;
+  overflow: hidden; /* Ensure the overflowed image doesn't protrude */
 }
 
-.imageSet {
-    height: 70%;
-    width: 70%;
+.bannerDivide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 }
 
-.seperator-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.imageSetDivide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
 }
 
-.seperator-text span {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    font-size: 40px;
-    font-weight: bold;
+.itemDivide,
+.shopDivide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
-.item-text {
-    position: absolute;
-    color: white;
-    top: 20%;
+.itemDivide:hover,
+.shopDivide:hover {
+  text-decoration: none;
 }
 
-.shop-text {
-    position: absolute;
-    color: white;
-    top: 20%;
+.part1Divide:hover .bannerDivide,
+.part2Divide:hover .bannerDivide {
+  transform: scale(1.1); /* Add scale effect on hover */
+}
+
+.part1Divide:hover .imageSetDivide,
+.part2Divide:hover .imageSetDivide {
+  transform: scale(1.1); /* Add scale effect on hover */
 }

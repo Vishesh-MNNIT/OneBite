@@ -13,6 +13,9 @@ import Demo from "./components/Demo.jsx";
 import ByShop from "./components/ByShop.jsx";
 import MainShop from "./components/Shops/MainShop.jsx";
 import OwnerAddItems from "./components/OwnerDashboard/OwnerAddItems.jsx";
+import AboutUs from "./components/AboutUs.jsx";
+import PaymentSuccess from "./components/PaymentStatus/PaymentSuccess.jsx";
+import PaymentFailure from "./components/PaymentStatus/PaymentFailure.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +62,18 @@ const router = createBrowserRouter([
   {
     path: "owneradditems",
     element: <OwnerAddItems />,
+  },
+  {
+    path: "aboutus",
+    element: <AboutUs />,
+  },
+  {
+    path: "paymentsuccess",
+    element: <PaymentSuccess />,
+  },
+  {
+    path: "paymentfailure",
+    element: <PaymentFailure />,
   },
 ]);
 

@@ -7,22 +7,22 @@
 .part1 {
   height: 100%;
   width: 50%;
-  background: #00c9ff;
-  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
-  background: linear-gradient(to right, #92fe9d, #00c9ff);
+  background: #b2fefa;
+  background: -webkit-linear-gradient(to left, #0ed2f7, #b2fefa);
+  background: linear-gradient(to left, #0ed2f7, #b2fefa);
 }
 
 .part2 {
   height: 100%;
   width: 50%;
-  background: #00c9ff;
-  background: -webkit-linear-gradient(to left, #92fe9d, #00c9ff);
-  background: linear-gradient(to left, #92fe9d, #00c9ff);
+  background: #b2fefa;
+  background: -webkit-linear-gradient(to right, #0ed2f7, #b2fefa);
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
 }
 
 .imageSet {
   height: 70%;
-  width: 70%;
+  width: 100%;
 }
 
 .seperator-text {
@@ -37,14 +37,38 @@
   text-orientation: upright;
   font-size: 40px;
   font-weight: bold;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition effect for color change */
+  cursor: pointer;
 }
-.buyer-text {
+
+.seperator-text span::before {
+  content: "";
   position: absolute;
-  color: white;
+  width: 5px;
+  height: 100%;
+  background-color: #ffffff;
+  left: -4px;
+  top: 0;
+  transition: height 0.3s ease; /* Add transition effect for underline height change */
+}
+
+.seperator-text span:hover {
+  color: #3f3939; /* Change text color on hover */
+}
+
+.seperator-text span:hover::before {
+  height: 110%; /* Extend underline height on hover */
+}
+
+.buyerLanding {
+  position: absolute;
+  color: rgb(0, 0, 0);
   top: 70%;
 }
-.owner-text {
+.ownerLanding {
   position: absolute;
-  color: white;
+  color: rgb(0, 0, 0);
   top: 10%;
+  text-shadow: #fff;
 }
