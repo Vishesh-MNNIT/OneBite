@@ -32,7 +32,7 @@ const generateAccessandRefereshTokens = async(userId) =>{
 const ownerInfoDetails = asyncHandler(async(req,res)=>{
      
     const {name} = req.body;
-
+   // console.log(req.body);
     const shopImageLocalPath =  req.files?.image[0]?.path;
 
     const shopImage = await uploadOnCloudinary(shopImageLocalPath)
@@ -46,11 +46,12 @@ const ownerInfoDetails = asyncHandler(async(req,res)=>{
         httpOnly:true,
         secure:true
     }
-     console.log("Vishehs");
+    // console.log("Vishehs");
     const {accessToken,refreshToken} = await generateAccessandRefereshTokens(shopdetails._id)
     
-    console.log(accessToken);
-    console.log(refreshToken);
+    // console.log(accessToken);
+    // console.log("MYANS");
+    // console.log(refreshToken);
 
     return res.status(201)
     .cookie("accessToken",accessToken,options)

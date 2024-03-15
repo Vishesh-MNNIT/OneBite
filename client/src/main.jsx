@@ -13,6 +13,9 @@ import Demo from "./components/Demo.jsx";
 import ByShop from "./components/ByShop.jsx";
 import MainShop from "./components/Shops/MainShop.jsx";
 import OwnerAddItems from "./components/OwnerDashboard/OwnerAddItems.jsx";
+import Cart from "./components/Cart.jsx";
+import { CartProvider } from './components/ContextReducer';
+import MyOrder from "./components/MyOrder.jsx";
 
 const router = createBrowserRouter([
   {
@@ -60,8 +63,22 @@ const router = createBrowserRouter([
     path: "owneradditems",
     element: <OwnerAddItems />,
   },
+  {
+    path: "usercart",
+    element: <Cart />,
+  },
+  {
+    path: "myorder",
+    element: <MyOrder />,
+  },
 ]);
 
+const AppWithProvider = () => (
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>
+);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AppWithProvider />
 );

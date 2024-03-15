@@ -23,7 +23,9 @@ function BuyerLogin() {
         }),
       });
       const json = await response.json();
-      console.log(json);
+      console.log(json.data.email);
+      localStorage.setItem('userEmail',json.data.email);
+
       if (json.statusCode === 400) {
         alert("Enter Valid Credentials");
       } else if (json.statusCode === 401) {

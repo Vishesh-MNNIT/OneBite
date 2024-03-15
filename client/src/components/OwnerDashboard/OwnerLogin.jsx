@@ -1,11 +1,12 @@
 import React from "react";
 import "./OwnerLogin.css";
 import img2 from "../../images/Cooking.gif";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 function OwnerLogin() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("HI");
@@ -24,7 +25,6 @@ function OwnerLogin() {
         }
       );
       const json = await response.json();
-      console.log(json);
       if (json.statusCode === 400) {
         alert("Enter Valid Credentials");
       } else if (json.statusCode === 401) {
@@ -32,7 +32,7 @@ function OwnerLogin() {
       } else if (json.statusCode === 404) {
         alert("First Create Account");
       } else if (json.statusCode === 200) {
-        // useNavigate(/login)
+        navigate("/ownerform");
       }
     } catch (error) {
       alert("Invalid credentials");

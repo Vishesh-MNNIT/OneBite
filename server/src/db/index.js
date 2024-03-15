@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
 import { OwnerInfo } from "../models/ownerInfo.model.js";
 import { Item } from "../models/item.model.js";
+import { OwnerOrder } from "../models/ownerOrder.model.js";
 const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
@@ -9,6 +10,8 @@ const connectDB = async () => {
     );
     // console.log(connectionInstance);
     //console.log(\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host});
+    const order = await OwnerOrder.find();
+    global.Order = order;
     const item = await Item.find();
     global.Item = item;
     // console.log(item);
@@ -29,7 +32,8 @@ const connectDB = async () => {
       index++;
     }
     global.items = itemsByShopkeeper;
-    console.log(global.items[0]);
+    //onsole.log(global.items);
+   //console.log(global.Order);
   } catch (error) {
     console.log("MONGODB connection FAILED ", error);
     process.exit(1);
