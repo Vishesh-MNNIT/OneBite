@@ -1,6 +1,7 @@
 import React from "react";
 import "./BuyerLogin.css";
 import img2 from "../../images/Buyer.gif";
+// import img2 from "../../images/Banner/BuyerLogin.jpg"
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -49,10 +50,32 @@ function BuyerLogin() {
     <>
       <div className="parent-container">
         <div className="d-flex parts">
-          <div className="part1 d-flex justify-content-center align-item-center ">
-            {/* <h1 className="buyer-text">BUYER</h1> */}
+          {/* <div className="part1 d-flex justify-content-center align-item-center ">
             <div>
               <img className="imageSet mt-5" src={img2} alt="" />
+            </div>
+            <div
+              className="buyer-text"
+              style={{ color: "black", fontFamily: "cursive" }}
+            >
+              <h4>
+                Visualize the aroma of freshly baked pizza, with a crispy crust
+                & bubbling cheese.
+              </h4>
+            </div>
+          </div> */}
+          <div className="part1 d-flex justify-content-center align-item-center">
+            <div
+              className="owner-text"
+              style={{ color: "black", fontFamily: "cursive" }}
+            >
+              <h4>
+                Visualize the aroma of freshly baked pizza, with a crispy crust
+                & bubbling cheese.
+              </h4>
+            </div>
+            <div>
+              <img className="buyerImageSet" src={img2} alt="" />
             </div>
           </div>
 
@@ -78,11 +101,26 @@ function BuyerLogin() {
                   onChange={onChange}
                 />
 
-                <button type="submit">LOG IN</button>
+                <button type="submit">
+                  {" "}
+                  <b>LOG IN</b>
+                </button>
               </form>
 
               <p>
-                Create New Account <Link to="/buyersign">SIGN UP</Link>
+                Create New Account
+                <button>
+                  <Link
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                    }}
+                    to="/buyersign"
+                  >
+                    SIGN UP
+                  </Link>
+                </button>
               </p>
             </div>
             <h1 className="owner-text"></h1>

@@ -7,9 +7,9 @@
   border-radius: 5px;
   /* background-color: #f9f9f9; */
   width: 300px;
-  background: #00c9ff;
+  /* background: #00c9ff;
   background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
-  background: linear-gradient(to right, #92fe9d, #00c9ff);
+  background: linear-gradient(to right, #92fe9d, #00c9ff); */
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -62,4 +62,7 @@
   background: #00c9ff;
   background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
   background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+.buyerImageSet {
+  margin-top: 100px;
 }
