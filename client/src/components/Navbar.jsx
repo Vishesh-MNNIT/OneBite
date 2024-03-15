@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+//import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useCart } from './ContextReducer';
 
-const Navbar = ({ cartItemsCount }) => {
+const Navbar = () => {
+  //const items = useCart();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -17,8 +22,8 @@ const Navbar = ({ cartItemsCount }) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/menu">
-                  Menu
+                <Link className="nav-link" to="/myorder">
+                  My Order
                 </Link>
               </li>
               <li className="nav-item">
@@ -27,11 +32,21 @@ const Navbar = ({ cartItemsCount }) => {
                 </Link>
               </li>
             </ul>
-            <div className="cart">
+            {/* <div className="cart">
               <Link className="btn btn-outline-light" to="/cart">
                 Cart ({cartItemsCount})
               </Link>
-            </div>
+            </div> */}
+            <div className="btn bg-white text-success mx-2 ">
+                                    <Badge color="secondary"  >
+                                        {/* <ShoppingCartIcon /> */}
+                                    </Badge>
+                                    <button>
+                                      <Link to="/usercart">
+                                        Cart 
+                                      </Link>
+                                    </button>
+                                </div>
           </div>
         </div>
       </nav>

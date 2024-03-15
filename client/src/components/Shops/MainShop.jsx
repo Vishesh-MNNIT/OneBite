@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Card from "../Card";
-
+import Navbar from "../Navbar";
 const MainShop = () => {
   const location = useLocation();
   const { selectedItem } = location.state;
@@ -10,6 +10,7 @@ const MainShop = () => {
 
   return (
     <div>
+      <Navbar />
       <h2>Selected Item Details</h2>
       <div className="mainShop-container">
         {/* <h1>ITEMS</h1> */}

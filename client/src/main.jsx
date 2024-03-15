@@ -17,6 +17,10 @@ import AboutUs from "./components/AboutUs.jsx";
 import PaymentSuccess from "./components/PaymentStatus/PaymentSuccess.jsx";
 import PaymentFailure from "./components/PaymentStatus/PaymentFailure.jsx";
 
+import Cart from "./components/Cart.jsx";
+import { CartProvider } from "./components/ContextReducer";
+import MyOrder from "./components/MyOrder.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +68,14 @@ const router = createBrowserRouter([
     element: <OwnerAddItems />,
   },
   {
+    path: "usercart",
+    element: <Cart />,
+  },
+  {
+    path: "myorder",
+    element: <MyOrder />,
+  },
+  {
     path: "aboutus",
     element: <AboutUs />,
   },
@@ -76,7 +88,12 @@ const router = createBrowserRouter([
     element: <PaymentFailure />,
   },
 ]);
+const AppWithProvider = () => (
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AppWithProvider />
 );
