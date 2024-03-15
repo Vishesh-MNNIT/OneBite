@@ -1,0 +1,37 @@
+/* PaymentSuccess.css */
+.payment-failure-container {
+  text-align: center;
+  font-family: Arial, sans-serif; /* Example font family */
+}
+
+.payment-failure-image {
+  width: 300px; /* Increase image size */
+  margin: 0 auto; /* Center image horizontally */
+}
+
+.payment-failure-title {
+  font-size: 32px; /* Increase font size */
+  font-weight: bold; /* Make title bold */
+  color: #da3a2f; /* Change title color to green */
+}
+
+.payment-failure-message {
+  font-size: 18px; /* Increase font size */
+  color: #333; /* Change message color */
+  margin-bottom: 20px; /* Add some bottom margin to message */
+}
+
+.payment-failure-button {
+  padding: 10px 20px; /* Add padding to button */
+  font-size: 16px; /* Increase font size */
+  background-color: #da3a2f; /* Green background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.payment-failure-button:hover {
+  background-color: #a10606; /* Darker green on hover */
+}
