@@ -1,0 +1,34 @@
+/* AboutUs.css */
+
+.aboutUsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px; /* Adjust the padding as needed */
+  }
+  
+  .aboutUsContent {
+    flex: 1;
+    padding-right: 20px; /* Add some spacing between the content and the image */
+  }
+  
+  .aboutUsContent h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .aboutUsContent p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .aboutUsImageContainer {
+    flex: 1;
+    padding-left: 20px; /* Add some spacing between the image and the content */
+  }
+  
+  .aboutUsImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add border radius for rounded corners */
+  }
