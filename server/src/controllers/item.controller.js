@@ -4,19 +4,19 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Item } from "../models/item.model.js";
 
 const itemInfoDetails = asyncHandler(async(req,res)=>{
-     
-    const {productName,price} = req.body;
+    //console.log(req.body);
+    const {userId,name,price} = req.body;
 
-    const productImageLocalPath =  req.files?.productImage[0]?.path;
+    const productImageLocalPath =  req.files?.image[0]?.path;
 
     const productImage = await uploadOnCloudinary(productImageLocalPath)
      
-    const id = req.ownerinfo._conditions._id;
-    console.log(id);
+    //const id = req.ownerinfo._conditions._id;
+    // console.log({userId});
 
     const itemdetails =  await Item.create({
-        shopkeeperId:id,
-        productName: productName,
+        shopkeeperId:userId,
+        productName: name,
         price:price,
         productImage:productImage.url
     })

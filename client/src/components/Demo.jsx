@@ -6,7 +6,7 @@ import Carousel from "./BuyerMain/Carousel";
 
 function Demo() {
   const [items, setItems] = useState({});
-  const [cartItems, setCartItems] = useState([]);
+  //const [cartItems, setCartItems] = useState([]);
 
   const loadData = async () => {
     try {
@@ -20,7 +20,6 @@ function Demo() {
         }
       );
       const data = await response.json();
-
       // Group items by product name
       const groupedItems = groupItemsByProductName(data);
       setItems(groupedItems);
@@ -46,20 +45,10 @@ function Demo() {
     return groupedItems;
   };
 
-  const addToCart = (itemId) => {
-    // Concatenate all item arrays into a single array
-    const allItems = Object.values(items).flat();
-    // Find the item with the given ID
-    const itemToAdd = allItems.find((item) => item._id === itemId);
-    if (itemToAdd) {
-      console.log(itemToAdd);
-      setCartItems([...cartItems, itemToAdd]);
-    }
-  };
 
   return (
     <>
-      <Navbar cartItemsCount={cartItems.length} />
+      <Navbar />
       <Carousel />
       <div className="containerDemo">
         {Object.entries(items).map(([productName, productList]) => (
@@ -74,7 +63,7 @@ function Demo() {
                   title={item.productName}
                   price={item.price}
                   shopName={item.shopName}
-                  addToCart={() => addToCart(item._id)} // Pass the item ID to addToCart function
+                // Pass the item ID to addToCart function
                 />
               ))}
             </div>

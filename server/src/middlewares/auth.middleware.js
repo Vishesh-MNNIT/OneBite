@@ -2,15 +2,17 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
 import { OwnerInfo } from "../models/ownerInfo.model.js";
 
-export const verifyJWTOwner = asyncHandler(async(req,res,next) =>{
-       
+
+
+ export const verifyJWTOwner = asyncHandler(async(req,res,next) =>{
+       //console.log(req);
    try {
      const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ","")
- 
+     console.log(token);
      if( !token){
          return res.status(401).json({
             sucess:false,
-            message:"Unauthorized access"
+            message:"Unauthorized access "
          })
      }
  

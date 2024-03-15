@@ -3,7 +3,6 @@ import { registerOwner,loginOwner,logoutOwner} from "../controllers/owner.contro
 import { ownerInfoDetails } from "../controllers/ownerInfo.controller.js";
 import { itemInfoDetails } from "../controllers/item.controller.js";
 import { upload } from "../middlewares/multer.middleware.js"
-import { verifyJWTOwner } from "../middlewares/auth.middleware.js";
 const router = Router();
 
 router.route("/register").post( registerOwner);
@@ -20,10 +19,10 @@ router.route("/shopdetails").post(
 router.route("/itemsUpload").post(
     upload.fields([
         {
-            name:"productImage",
+            name:"image",
             maxCount:1
         }
     ]),
-    verifyJWTOwner,itemInfoDetails)
+    itemInfoDetails)
 
 export default router
