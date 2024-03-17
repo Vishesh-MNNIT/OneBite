@@ -1,17 +1,15 @@
 // DiscountPage.jsx
 
 import React, { useEffect, useState } from "react";
-//import "./Discount.css";
-
-
+import "./Discount.css";
 
 const DiscountPage = () => {
-  const [currentPoints,setCurrentPoints] = useState(0);
-  const [pointsNeeded,setpointsNeeded] = useState(0);
+  const [currentPoints, setCurrentPoints] = useState(0);
+  const [pointsNeeded, setpointsNeeded] = useState(0);
 
   const userEmail = localStorage.getItem("userEmail");
   console.log(userEmail);
-  const loadData = async()=>{
+  const loadData = async () => {
     try {
       const response = await fetch(
         "http://localhost:3000/api/v1/user/displayPoints",
@@ -21,7 +19,7 @@ const DiscountPage = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: userEmail
+            email: userEmail,
           }),
         }
       );
@@ -29,13 +27,13 @@ const DiscountPage = () => {
       // Group items by product name
       // console.log(data.user.points);
       setCurrentPoints(data.user.points);
-      setpointsNeeded(50-data.user.points);
+      setpointsNeeded(50 - data.user.points);
       // console.log(items);
     } catch (error) {
       console.error("Error loading data:", error);
     }
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     loadData();
   });
   return (

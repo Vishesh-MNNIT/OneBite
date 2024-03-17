@@ -1,16 +1,31 @@
 .containerDemo {
-
   display: flex;
   flex-direction: column;
+  /* margin-left: 60px; */
+  /* background: #b2fefa;
+  background: -webkit-linear-gradient(to left, #0ed2f7, #b2fefa);
+  background: linear-gradient(to left, #0ed2f7, #b2fefa); */
+
+  /* background: rgb(42, 41, 41); */
 }
 
 .product-category {
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add margin between each product category */
+}
+
+.product-category h3 {
+  display: inline-block;
+  background-color: #1a98ab; /* Adjust background color */
+  color: white;
+  padding: 10px 20px; /* Adjust padding */
+  border-radius: 5px; /* Add border radius */
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  margin-left: 50px;
 }
-

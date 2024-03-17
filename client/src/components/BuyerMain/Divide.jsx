@@ -1,7 +1,7 @@
 import React from "react";
 import "./Divide.css";
-import img1 from "../../images/BurgerC.jpg";
-import img2 from "../../images/ShopD.jpg";
+import img1 from "../../images/Animation/BurgerKing.gif";
+import img2 from "../../images/Cafe.jpg";
 import { Link } from "react-router-dom";
 
 export default function Divide() {

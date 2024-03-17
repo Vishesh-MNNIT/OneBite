@@ -28,13 +28,15 @@ const Card2 = ({ index, imageSrc, shopName }) => {
   }, []);
 
   return (
-    <div className="card card2">
-      <img src={imageSrc} className="card-image" alt="Shop" />
-      <div className="card-content">
-        <p className="shop-name">Shop Name: {shopName}</p>
+    <div className="card2-container">
+      <img src={imageSrc} className="card2-image" alt="Shop" />
+      <div className="card2-content">
+        <p style={{ color: "white" }} className="shop-name">
+          {shopName}
+        </p>
       </div>
       <button onClick={clickHandler} className="enter-button">
-        ENTER
+        MENU
       </button>
     </div>
   );

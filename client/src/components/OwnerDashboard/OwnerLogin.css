@@ -24,7 +24,9 @@
 }
 
 .login-container input[type="email"],
-.login-container input[type="password"] {
+.login-container input[type="password"],
+.login-container input[type="username"],
+.login-container input[type="fullName"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -63,4 +65,17 @@
   background: #00c9ff;
   background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
   background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+
+.ownerImageSet {
+  height: 80%;
+  padding: 80px;
+  margin-top: 130px;
+  border-radius: 120px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.ownerImageSet:hover {
+  transform: scale(0.8);
+  filter: brightness(80%);
 }

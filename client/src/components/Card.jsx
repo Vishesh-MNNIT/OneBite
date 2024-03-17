@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import "./Card.css";
-import { useDispatchCart, useCart } from './ContextReducer'
+import { useDispatchCart, useCart } from "./ContextReducer";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 
@@ -14,11 +14,11 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
       return (
         <span key={index}>
           {rating >= index + 1 ? (
-            <FaStar/>
+            <FaStar />
           ) : rating >= number ? (
-            <FaStarHalfAlt  />
+            <FaStarHalfAlt />
           ) : (
-            <AiOutlineStar/>
+            <AiOutlineStar />
           )}
         </span>
       );
@@ -28,9 +28,15 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
   const handleQty = (e) => {
     setQty(e.target.value);
   };
-
   const handleAddToCart = async () => {
-    await dispatch({ type: "ADD", id: itemId, name: title, price: price, qty: qty, img: imageSrc });
+    await dispatch({
+      type: "ADD",
+      id: itemId,
+      name: title,
+      price: price,
+      qty: qty,
+      img: imageSrc,
+    });
   };
 
   return (
@@ -44,13 +50,25 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
           {renderStarRating()} {rating}
         </div>
         <p>No. Of Reviews: {count}</p>
-        <select className="m-2 h-100 w-20 bg-success text-black rounded" style={{ select: "#FF0000" }} onChange={handleQty}>
+        <select
+          className="m-2 h-100 w-20 bg-success text-black rounded"
+          style={{ select: "#FF0000" }}
+          onChange={handleQty}
+        >
           {Array.from(Array(6), (e, i) => {
             return (
-              <option key={i + 1} value={i + 1}>{i + 1}</option>)
+              <option key={i + 1} value={i + 1}>
+                {i + 1}
+              </option>
+            );
           })}
         </select>
-        <button className={`btn btn-success justify-center ms-2 `} onClick={handleAddToCart}>Add to Cart</button>
+        <button
+          className={`btn btn-success justify-center ms-2 `}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

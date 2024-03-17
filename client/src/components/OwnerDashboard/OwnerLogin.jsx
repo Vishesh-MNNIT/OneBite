@@ -1,8 +1,9 @@
 import React from "react";
 import "./OwnerLogin.css";
-import img2 from "../../images/Cooking.gif";
+import img2 from "../../images/YellowC.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Logo from "../Logo/Logo";
 function OwnerLogin() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
@@ -47,21 +48,26 @@ function OwnerLogin() {
   };
   return (
     <>
+      <Logo />
       <div className="parent-container">
         <div className="d-flex parts">
           <div className="part1 d-flex justify-content-center align-item-center">
             <div
               className="owner-text"
-              style={{ color: "black", fontFamily: "cursive" }}
+              style={{
+                color: "black",
+                fontFamily: "cursive",
+                marginLeft: "10px",
+              }}
             >
-              <h4>
+              <h4 style={{ marginLeft: "30px", marginTop: "50px" }}>
                 Welcome, esteemed shopkeeper, to your culinary kingdom! As you
                 log in to your account, envision the bustling energy of your
                 kitchen.
               </h4>
             </div>
             <div>
-              <img className="ownerImageSet mt-5" src={img2} alt="" />
+              <img className="ownerImageSet" src={img2} alt="" />
             </div>
           </div>
 
@@ -117,9 +123,9 @@ function OwnerLogin() {
             <h1 className="owner-text"></h1>
           </div>
         </div>
-        <div className="seperator-text">
+        {/* <div className="seperator-text">
           <span>...</span>
-        </div>
+        </div> */}
       </div>
     </>
   );

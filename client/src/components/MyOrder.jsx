@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card3 from "./Card3";
 import Navbar from "./Navbar";
-import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import { v4 as uuidv4 } from "uuid"; // Import uuid
 import "./MyOrder.css";
 
 function MyOrder() {
@@ -22,7 +22,6 @@ function MyOrder() {
         }
       );
       const data = await response.json();
-      console.log(data);
       setItems(data.orderData.order_data);
     } catch (error) {
       console.error("Error loading data:", error);
@@ -38,7 +37,7 @@ function MyOrder() {
       <Navbar />
       <div className="my-container">
         {items.map((orderItems) => (
-          <div  key={uuidv4()} className="my-container">
+          <div key={uuidv4()} className="my-container">
             {orderItems
               .slice(0)
               .reverse()

@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Badge from "@mui/material/Badge";
-//import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { useCart } from './ContextReducer';
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "./ContextReducer";
 
 const Navbar = () => {
   //const items = useCart();
@@ -28,36 +27,35 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-
-                <Link className="nav-link" to="/discount">
-                  Discount
-
                 <Link className="nav-link" to="/aboutus">
                   About Us!
-
+                </Link>
+              </li>
+              {/* <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </li> */}
+              <li className="nav-item">
+                <Link className="nav-link" to="/discount">
+                  Discount
                 </Link>
               </li>
             </ul>
-            {/* <div className="cart">
-              <Link className="btn btn-outline-light" to="/cart">
-                Cart ({cartItemsCount})
-              </Link>
-            </div> */}
             <div className="btn bg-white text-success mx-2 ">
-                                    <Badge color="secondary"  >
-                                        {/* <ShoppingCartIcon /> */}
-                                    </Badge>
-                                    <button>
-                                      <Link to="/usercart">
-                                        Cart 
-                                      </Link>
-                                    </button>
-                                </div>
+              <Badge color="secondary">
+                <ShoppingCartIcon />
+              </Badge>
+              <button>
+                <Link style={{ textDecoration: "none" }} to="/usercart">
+                  Cart
+                </Link>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </div>
   );
 };
-
 export default Navbar;

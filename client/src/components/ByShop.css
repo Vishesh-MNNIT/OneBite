@@ -1,10 +1,25 @@
 /* ByShop.css */
+.shops-heading {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
+  padding: 5px;
+}
+
+.shops-heading h1 {
+  font-size: 32px; /* Adjust the font size */
+  color: #333; /* Set the text color */
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 2px; /* Add some letter spacing for better readability */
+}
 .shop-container {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2px; */
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  margin-top: 30px;
+  background: #b2fefa;
+  background: -webkit-linear-gradient(to left, #0ed2f7, #b2fefa);
+  background: linear-gradient(to left, #0ed2f7, #b2fefa);
 }
 .card-container {
   display: flex;

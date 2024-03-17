@@ -25,7 +25,7 @@ function Demo() {
       console.log(data);
       const groupedItems = groupItemsByProductName(data);
       setItems(groupedItems);
-      // console.log(items);
+      console.log(items);
     } catch (error) {
       console.error("Error loading data:", error);
     }
@@ -48,7 +48,6 @@ function Demo() {
     return groupedItems;
   };
 
-
   return (
     <>
       <Navbar />
@@ -56,7 +55,7 @@ function Demo() {
       <div className="containerDemo">
         {Object.entries(items).map(([productName, productList]) => (
           <div key={productName} className="product-category">
-            <h2>{productName}</h2>
+            <h3>{productName}</h3>
             <div className="card-container">
               {productList.map((item) => (
                 <Card
@@ -66,9 +65,9 @@ function Demo() {
                   title={item.productName}
                   price={item.price}
                   shopName={item.shopName}
-                  rating= {item.rating}
+                  rating={item.rating}
                   count={item.count}
-                // Pass the item ID to addToCart function
+                  // Pass the item ID to addToCart function
                 />
               ))}
             </div>

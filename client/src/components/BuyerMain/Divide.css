@@ -17,6 +17,8 @@
   background: linear-gradient(to right, #92fe9d, #00c9ff);
   position: relative;
   overflow: hidden; /* Ensure the overflowed image doesn't protrude */
+  margin-right: 10px;
+  border-radius: 20px;
 }
 
 .part2Divide {
@@ -27,6 +29,8 @@
   background: linear-gradient(to left, #92fe9d, #00c9ff);
   position: relative;
   overflow: hidden; /* Ensure the overflowed image doesn't protrude */
+  margin-left: 10px;
+  border-radius: 20px;
 }
 
 .bannerDivide {
