@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card2 from "./Card2";
 import "./ByShop.css";
+import Navbar from "./Navbar";
 
 function ByShop() {
   const [items, setItems] = useState([]);
@@ -29,7 +30,11 @@ function ByShop() {
 
   return (
     <>
+      <Navbar />
       <div className="shop-container ">
+        <div className="shops-heading">
+          <h1>All the Shops</h1>
+        </div>
         <div className="card-container">
           {items.map((item, index) => (
             <Card2

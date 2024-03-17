@@ -13,7 +13,7 @@ const MainShop = () => {
       <Navbar />
       <h2>Selected Item Details</h2>
       <div className="mainShop-container">
-        {/* <h1>ITEMS</h1> */}
+        <h1 style={{ marginTop: "20px" }}>ITEMS</h1>
         <div className="card-container">
           {selectedItem.map((item) => (
             <Card
@@ -25,7 +25,6 @@ const MainShop = () => {
               addToCart={() => addToCart(item._id)} // Pass your addToCart function here
             />
           ))}
-          Hello world
         </div>
       </div>
     </div>

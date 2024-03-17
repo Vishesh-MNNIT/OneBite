@@ -1,0 +1,23 @@
+.header {
+  background-color: transparent; /* Adjust background color */
+  color: white;
+  padding: 10px 20px; /* Adjust padding */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure header is above other content */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px; /* Adjust logo size */
+  margin-right: 20px; /* Add space between logo and other content */
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1); /* Example: Scale up the logo on hover */
+  box-shadow: 0px 0px 10px 5px rgba(8, 0, 0, 0.7); /* Add white shadow */
+}

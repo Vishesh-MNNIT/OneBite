@@ -1,44 +1,59 @@
-/* Card2.css */
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  width: 300px;
-  margin: 20px;
+.card2-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%; /* Make it circular */
+  border: 5px solid #000; /* Add thick black border */
+  transition: transform 0.3s ease; /* Add transition effect */
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.card2-container:hover {
+  transform: scale(1.1); /* Scale up on hover */
 }
 
-.card-image {
+.card2 {
+  position: relative;
   width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 100%;
 }
 
-.card-content {
-  padding: 20px;
+.card2-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card2-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff;
+  text-align: center;
 }
 
 .shop-name {
-  font-size: 1em;
-  color: #333;
+  margin: 0;
+  font-size: 16px;
 }
 
 .enter-button {
-  background-color: #007bff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 16px;
+  background-color: #000000;
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Add transition effect */
 }
 
 .enter-button:hover {
-  background-color: #0056b3;
+  background-color: #373d43;
 }

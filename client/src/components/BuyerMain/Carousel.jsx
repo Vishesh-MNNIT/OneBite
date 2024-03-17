@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import img1 from "../../images/Banner/BurgerC.jpg";
 import img2 from "../../images/Banner/MomosC.jpg";
 import img3 from "../../images/Banner/BreadC.jpg";
+import img4 from "../../images/Banner/Desert.jpg";
 
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const images = [img1, img2, img3];
+  const images = [img1, img2, img3, img4];
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -64,5 +64,13 @@
   background: linear-gradient(to right, #92fe9d, #00c9ff);
 }
 .buyerImageSet {
-  margin-top: 100px;
+  padding: 100px;
+  margin-top: 80px;
+  border-radius: 120px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.buyerImageSet:hover {
+  transform: scale(0.8);
+  filter: brightness(80%);
 }

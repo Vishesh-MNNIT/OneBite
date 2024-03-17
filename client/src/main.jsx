@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import BuyerLogin from "./components/BuyerDashboard/BuyerLogin.jsx";
 import OwnerLogin from "./components/OwnerDashboard/OwnerLogin.jsx";
 import BuyerSignup from "./components/BuyerSignUp/BuyerSignup.jsx";
@@ -16,84 +17,47 @@ import OwnerAddItems from "./components/OwnerDashboard/OwnerAddItems.jsx";
 import AboutUs from "./components/AboutUs.jsx";
 import PaymentSuccess from "./components/PaymentStatus/PaymentSuccess.jsx";
 import PaymentFailure from "./components/PaymentStatus/PaymentFailure.jsx";
-
 import Cart from "./components/Cart.jsx";
-import { CartProvider } from "./components/ContextReducer";
 import MyOrder from "./components/MyOrder.jsx";
+import { CartProvider } from "./components/ContextReducer";
+import Logo from "./components/Logo/Logo.jsx";
+import MostDivide from "./components/Most/MostDivide.jsx";
+import MostSold from "./components/Most/MostSold.jsx";
+import MostRated from "./components/Most/MostRated.jsx";
+import Contact from "./components/Contact.jsx";
+import Discount from "./components/Discount/Discount.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "buyerlogin",
-    element: <BuyerLogin />,
-  },
-  {
-    path: "ownerlogin",
-    element: <OwnerLogin />,
-  },
-  {
-    path: "ownersign",
-    element: <OwnerSignup />,
-  },
-  {
-    path: "buyersign",
-    element: <BuyerSignup />,
-  },
-  {
-    path: "ownerform",
-    element: <OwnerForm />,
-  },
-  {
-    path: "buyermain",
-    element: <BuyerMain />,
-  },
-  {
-    path: "demo",
-    element: <Demo />,
-  },
-  {
-    path: "byshop",
-    element: <ByShop />,
-  },
-
-  {
-    path: "mainshop",
-    element: <MainShop />,
-  },
-  {
-    path: "owneradditems",
-    element: <OwnerAddItems />,
-  },
-  {
-    path: "usercart",
-    element: <Cart />,
-  },
-  {
-    path: "myorder",
-    element: <MyOrder />,
-  },
-  {
-    path: "aboutus",
-    element: <AboutUs />,
-  },
-  {
-    path: "paymentsuccess",
-    element: <PaymentSuccess />,
-  },
-  {
-    path: "paymentfailure",
-    element: <PaymentFailure />,
-  },
-]);
-const AppWithProvider = () => (
-  <CartProvider>
-    <RouterProvider router={router} />
-  </CartProvider>
-);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <AppWithProvider />
+ReactDOM.render(
+  <React.StrictMode>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="buyerlogin" element={<BuyerLogin />} />
+          <Route path="ownerlogin" element={<OwnerLogin />} />
+          <Route path="ownersign" element={<OwnerSignup />} />
+          <Route path="buyersign" element={<BuyerSignup />} />
+          <Route path="ownerform" element={<OwnerForm />} />
+          <Route path="buyermain" element={<BuyerMain />} />
+          <Route path="demo" element={<Demo />} />
+          <Route path="byshop" element={<ByShop />} />
+          <Route path="mainshop" element={<MainShop />} />
+          <Route path="owneradditems" element={<OwnerAddItems />} />
+          <Route path="usercart" element={<Cart />} />
+          <Route path="myorder" element={<MyOrder />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="paymentsuccess" element={<PaymentSuccess />} />
+          <Route path="paymentfailure" element={<PaymentFailure />} />
+          <Route path="logo" element={<Logo />} />
+          <Route path="mostdivide" element={<MostDivide />} />
+          <Route path="mostsold" element={<MostSold />} />
+          <Route path="mostrated" element={<MostRated />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="discount" element={<Discount />} />
+        </Routes>
+      </Router>
+      <ToastContainer />
+    </CartProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

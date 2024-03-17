@@ -6,6 +6,7 @@ import Divide from "./Divide.jsx";
 import img1 from "../../images/Banner/BowlC.jpg";
 import img2 from "../../images/Banner/BowlC2.jpg";
 import Footer from "../Footer.jsx";
+import MostDivide from "../Most/MostDivide.jsx";
 
 function BuyerMain() {
   return (
@@ -13,18 +14,19 @@ function BuyerMain() {
       <div className="mainDiv">
         <Navbar />
         <Divide />
-        <div className="bannerContainer">
+        <MostDivide />
+        <div className="bannerContainer1">
           <img className="bannerImg" src={img2} alt="Banner" />
           <div className="bannerText">
             <h2>Welcome to OneBite!</h2>
             <p>Explore our delicious menu and start ordering now.</p>
-            <Link to="/paymentfailure" className="btn btn-primary">
+            <Link to="/aboutus" className="btn btn-primary">
               About Us!
             </Link>
           </div>
         </div>
 
-        <div className="bannerContainer">
+        <div className="bannerContainer2">
           <div className="bannerText">
             {/* <h2>Welcome to OneBite!</h2> */}
             <h2>ONE BITE :Known for Quality</h2>
@@ -41,7 +43,6 @@ function BuyerMain() {
           </div>
           <img className="bannerImg" src={img1} alt="Banner" />
         </div>
-
         <Footer />
       </div>
     </>

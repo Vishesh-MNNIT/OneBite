@@ -1,0 +1,49 @@
+/* DiscountPage.css */
+
+.discount-container {
+  background-image: url("../../images/Banner/BowlC2.jpg"); /* Add the URL of your background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 20px;
+  /* text-align: center; */
+}
+
+.points-info,
+.rules-box {
+  margin-bottom: 160px;
+}
+
+.rules-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.rules-box:hover {
+  transform: translateY(-5px); /* Move up on hover */
+}
+
+.rules-box h2 {
+  margin-bottom: 10px;
+}
+
+.rules-box ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.rules-box ul li {
+  margin-bottom: 10px;
+}
+
+.rules-box ul li:last-child {
+  margin-bottom: 0;
+}

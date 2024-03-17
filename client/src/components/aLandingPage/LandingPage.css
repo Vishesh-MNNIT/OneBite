@@ -1,3 +1,27 @@
+.header {
+  background-color: transparent; /* Adjust background color */
+  color: white;
+  padding: 10px 20px; /* Adjust padding */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure header is above other content */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px; /* Adjust logo size */
+  margin-right: 20px; /* Add space between logo and other content */
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1); /* Example: Scale up the logo on hover */
+  box-shadow: 0px 0px 10px 5px rgba(8, 0, 0, 0.7); /* Add white shadow */
+}
+
 .parent-container {
   height: 100vh;
 }
@@ -20,12 +44,16 @@
   background: linear-gradient(to right, #0ed2f7, #b2fefa);
 }
 
+.imageSet1 {
+  height: 50%;
+  width: 100%;
+}
 .imageSet {
-  height: 70%;
+  height: 60%;
   width: 100%;
 }
 
-.seperator-text {
+/* .seperator-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,7 +66,7 @@
   font-size: 40px;
   font-weight: bold;
   color: #fff;
-  transition: color 0.3s ease; /* Add transition effect for color change */
+  transition: color 0.3s ease;
   cursor: pointer;
 }
 
@@ -50,16 +78,16 @@
   background-color: #ffffff;
   left: -4px;
   top: 0;
-  transition: height 0.3s ease; /* Add transition effect for underline height change */
+  transition: height 0.3s ease;
 }
 
 .seperator-text span:hover {
-  color: #3f3939; /* Change text color on hover */
+  color: #3f3939;
 }
 
 .seperator-text span:hover::before {
-  height: 110%; /* Extend underline height on hover */
-}
+  height: 110%;
+} */
 
 .buyerLanding {
   position: absolute;
@@ -69,6 +97,13 @@
 .ownerLanding {
   position: absolute;
   color: rgb(0, 0, 0);
-  top: 10%;
-  text-shadow: #fff;
+  top: 70%;
+  padding: 10px; /* Add padding to create space around the text */
+  background-color: #66dcf4; /* Set background color for the box */
+  border-radius: 10px; /* Add border radius to create rounded corners */
+  transition: box-shadow 0.3s ease; /* Add transition effect for box-shadow */
+}
+
+.ownerLanding:hover {
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5); /* Increase shadow effect on hover */
 }
