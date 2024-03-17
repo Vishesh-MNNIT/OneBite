@@ -10,16 +10,17 @@ export default function LandingPage() {
       <div className="parent-container">
         <div className="d-flex parts">
           <div className="part1 d-flex justify-content-center align-item-center">
-            <h1 className="buyer-text">
+            <h1 className="buyerLanding">
               <Link
                 style={{
-                  color: "white",
+                  color: "black",
                   fontWeight: "bold",
                   textDecoration: "none",
+                  fontFamily: "cursive",
                 }}
                 to="/buyerlogin"
               >
-                BUYER
+                CUSTOMER
               </Link>
             </h1>
             <div>
@@ -31,22 +32,23 @@ export default function LandingPage() {
             <div>
               <img className="imageSet mt-4" src={img1} alt="" />
             </div>
-            <h1 className="owner-text">
+            <h1 className="ownerLanding">
               <Link
                 style={{
-                  color: "white",
+                  color: "black",
                   fontWeight: "bold",
                   textDecoration: "none",
+                  fontFamily: "cursive",
                 }}
                 to="/ownerlogin"
               >
-                OWNER
+                SHOPKEEPER
               </Link>
             </h1>
           </div>
         </div>
         <div className="seperator-text">
-          <span>ONE BITE</span>
+          <span>ONE.BITE</span>
         </div>
       </div>
     </>

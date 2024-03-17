@@ -1,5 +1,29 @@
-.mainDiv {
-  background: #00c9ff;
-  background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff);
-  background: linear-gradient(to right, #92fe9d, #00c9ff);
+.bannerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  /* background-color: #44b09e;
+  background-image: linear-gradient(315deg, #44b09e 0%, #e0d2c7 74%); */
+}
+
+.bannerImg {
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin-bottom: 20px;
+}
+
+.bannerText {
+  text-align: center;
+  padding: 20px;
+}
+
+.bannerText h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.bannerText p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }

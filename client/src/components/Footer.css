@@ -1,0 +1,16 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}

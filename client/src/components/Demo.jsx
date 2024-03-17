@@ -3,6 +3,7 @@ import Card from "./Card";
 import "./Demo.css";
 import Navbar from "./Navbar";
 import Carousel from "./BuyerMain/Carousel";
+import Footer from "./Footer";
 
 function Demo() {
   const [items, setItems] = useState({});
@@ -74,6 +75,7 @@ function Demo() {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }

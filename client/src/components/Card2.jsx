@@ -28,7 +28,7 @@ const Card2 = ({ index, imageSrc, shopName }) => {
   }, []);
 
   return (
-    <div className="card">
+    <div className="card card2">
       <img src={imageSrc} className="card-image" alt="Shop" />
       <div className="card-content">
         <p className="shop-name">Shop Name: {shopName}</p>
