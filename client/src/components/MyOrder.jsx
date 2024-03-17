@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card3 from "./Card3";
 import Navbar from "./Navbar";
+import { v4 as uuidv4 } from "uuid"; // Import uuid
 import "./MyOrder.css";
 
 function MyOrder() {
@@ -35,13 +36,13 @@ function MyOrder() {
     <>
       <Navbar />
       <div className="my-container">
-        {items.map((orderItems, orderIndex) => (
-          <div key={orderIndex} className="my-container">
+        {items.map((orderItems) => (
+          <div key={uuidv4()} className="my-container">
             {orderItems
               .slice(0)
               .reverse()
               .map((item, index) => (
-                <div key={item._id} className="my-order-item">
+                <div key={item.id} className="my-order-item">
                   {index === orderItems.length - 1 && item.Order_date && (
                     <div className="my-order-date">
                       <h2>{item.Order_date}</h2>
@@ -51,7 +52,8 @@ function MyOrder() {
                   {index !== orderItems.length - 1 && (
                     <div className="my-card-container">
                       <Card3
-                        key={item._id}
+                        key={item.id}
+                        itemId={item.id}
                         imageSrc={item.img}
                         title={item.name}
                         price={item.price}

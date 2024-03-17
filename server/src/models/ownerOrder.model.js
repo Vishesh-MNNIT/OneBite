@@ -9,8 +9,7 @@ const ownerOrderSchema= new Schema({
     order_data: {
         type: Array,
         required: true,
-    },
-
+    }
 });
 
 export const OwnerOrder = mongoose.model('order', ownerOrderSchema)
