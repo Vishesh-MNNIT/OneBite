@@ -46,11 +46,14 @@ const Navbar = () => {
               <Badge color="secondary">
                 <ShoppingCartIcon />
               </Badge>
-              <button>
-                <Link style={{ textDecoration: "none" }} to="/usercart">
+              <>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/usercart"
+                >
                   Cart
                 </Link>
-              </button>
+              </>
             </div>
           </div>
         </div>
