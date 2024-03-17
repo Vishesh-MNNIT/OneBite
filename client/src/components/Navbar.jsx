@@ -4,6 +4,7 @@ import Badge from "@mui/material/Badge";
 //import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useCart } from './ContextReducer';
 
+
 const Navbar = () => {
   //const items = useCart();
 
@@ -24,6 +25,11 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/myorder">
                   My Order
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/discount">
+                  Discount
                 </Link>
               </li>
             </ul>

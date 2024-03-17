@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
+import Card3 from "./Card3";
 import Navbar from "./Navbar";
-import Carousel from "./BuyerMain/Carousel";
+import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import "./MyOrder.css";
 
 function MyOrder() {
-  const [items, setItems] = useState([]); // Initialize items as an empty array
+  const [items, setItems] = useState([]);
 
   const loadData = async () => {
     try {
@@ -16,13 +17,13 @@ function MyOrder() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: localStorage.getItem('userEmail')
-          })
+            email: localStorage.getItem("userEmail"),
+          }),
         }
       );
       const data = await response.json();
-      console.log(data.orderData.order_data[0]);
-      setItems(data.orderData.order_data[0]);
+      console.log(data);
+      setItems(data.orderData.order_data);
     } catch (error) {
       console.error("Error loading data:", error);
     }
@@ -35,26 +36,34 @@ function MyOrder() {
   return (
     <>
       <Navbar />
-      {/* <Carousel /> */}
-      <div className="containerDemo">
-        {items.slice(0).reverse().map((item, index) => (
-          <div key={item._id}>
-            {index === items.length - 1 && item.Order_date && (
-              <div className='m-auto mt-5'>
-                <h2>{item.Order_date}</h2>
-                <hr />
-              </div>
-            )}
-            {index!=items.length - 1  && (
-                <div className="card-container">
-              <Card
-                key={item._id}
-                imageSrc={item.img}
-                title={item.name}
-                price={item.price}
-              />
-            </div>
-            )}
+      <div className="my-container">
+        {items.map((orderItems) => (
+          <div  key={uuidv4()} className="my-container">
+            {orderItems
+              .slice(0)
+              .reverse()
+              .map((item, index) => (
+                <div key={item.id} className="my-order-item">
+                  {index === orderItems.length - 1 && item.Order_date && (
+                    <div className="my-order-date">
+                      <h2>{item.Order_date}</h2>
+                      <hr />
+                    </div>
+                  )}
+                  {index !== orderItems.length - 1 && (
+                    <div className="my-card-container">
+                      <Card3
+                        key={item.id}
+                        itemId={item.id}
+                        imageSrc={item.img}
+                        title={item.name}
+                        price={item.price}
+                        shopName={item.shopName} // Add this line
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
         ))}
       </div>

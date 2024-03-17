@@ -18,6 +18,14 @@ const itemSchema = new Schema({
     type: String,
     required: true,
   },
+  rating: {
+    type: Number,
+    default: 0
+  },
+  count: {
+    type: Number,
+    default: 0
+  }
 });
 
 export const Item = mongoose.model("Item", itemSchema);

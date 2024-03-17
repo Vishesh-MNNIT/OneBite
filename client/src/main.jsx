@@ -16,6 +16,10 @@ import OwnerAddItems from "./components/OwnerDashboard/OwnerAddItems.jsx";
 import Cart from "./components/Cart.jsx";
 import { CartProvider } from './components/ContextReducer';
 import MyOrder from "./components/MyOrder.jsx";
+import MostSold from "./components/Most/MostSold.jsx";
+import MostRated from "./components/Most/MostRated.jsx";
+import MostDivide from "./components/Most/MostDivide";
+import Discount from "./components/Discount/Discount.jsx"
 
 const router = createBrowserRouter([
   {
@@ -70,6 +74,22 @@ const router = createBrowserRouter([
   {
     path: "myorder",
     element: <MyOrder />,
+  },
+  {
+    path: "mostdivide",
+    element: <MostDivide />,
+  },
+  {
+    path: "mostrated",
+    element: <MostRated />,
+  },
+  {
+    path: "mostsold",
+    element: <MostSold />,
+  },
+  {
+    path: "discount",
+    element: <Discount />,
   },
 ]);
 
