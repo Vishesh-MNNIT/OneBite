@@ -17,11 +17,14 @@ const MainShop = () => {
         <div className="card-container">
           {selectedItem.map((item) => (
             <Card
-              key={item._id} // Make sure to provide a unique key
+              key={item._id}
+              itemId={item._id} // Pass the item ID to the Card component
               imageSrc={item.productImage}
               title={item.productName}
               price={item.price}
-              shopName="Ojha"
+              shopName={item.shopName}
+              rating={item.rating}
+              count={item.count}
               addToCart={() => addToCart(item._id)} // Pass your addToCart function here
             />
           ))}

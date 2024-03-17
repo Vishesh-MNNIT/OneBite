@@ -1,5 +1,4 @@
-import React from "react";
-// import Delete from '@material-ui/icons/Delete'
+import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCart, useDispatchCart } from "../components/ContextReducer";

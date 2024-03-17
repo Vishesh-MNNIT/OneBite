@@ -4,7 +4,6 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "./ContextReducer";
 
-
 const Navbar = () => {
   //const items = useCart();
 
@@ -28,36 +27,30 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-
-                <Link className="nav-link" to="/discount">
-                  Discount
-
                 <Link className="nav-link" to="/aboutus">
                   About Us!
-
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/discount">
                   Discount
                 </Link>
               </li>
             </ul>
-            <div className="btn bg-white  mx-2 ">
-              <Badge color="white">
+            <div className="btn bg-white text-success mx-2 ">
+              <Badge color="secondary">
                 <ShoppingCartIcon />
               </Badge>
-              <Link
-                style={{ textDecoration: "none", color: "black" }}
-                to="/usercart"
-              >
-                CART
-              </Link>
+              <button>
+                <Link style={{ textDecoration: "none" }} to="/usercart">
+                  Cart
+                </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -65,5 +58,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

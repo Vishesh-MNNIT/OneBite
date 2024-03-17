@@ -24,7 +24,7 @@ import Logo from "./components/Logo/Logo.jsx";
 import MostDivide from "./components/Most/MostDivide.jsx";
 import MostSold from "./components/Most/MostSold.jsx";
 import MostRated from "./components/Most/MostRated.jsx";
-import Contact from "./components/Contact.jsx";
+// import Contact from "./components/Contact.jsx";
 import Discount from "./components/Discount/Discount.jsx";
 
 ReactDOM.render(
@@ -52,7 +52,7 @@ ReactDOM.render(
           <Route path="mostdivide" element={<MostDivide />} />
           <Route path="mostsold" element={<MostSold />} />
           <Route path="mostrated" element={<MostRated />} />
-          <Route path="contact" element={<Contact />} />
+          {/* <Route path="contact" element={<Contact />} /> */}
           <Route path="discount" element={<Discount />} />
         </Routes>
       </Router>

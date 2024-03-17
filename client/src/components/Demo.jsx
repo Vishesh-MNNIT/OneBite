@@ -25,7 +25,7 @@ function Demo() {
       console.log(data);
       const groupedItems = groupItemsByProductName(data);
       setItems(groupedItems);
-      // console.log(items);
+      console.log(items);
     } catch (error) {
       console.error("Error loading data:", error);
     }
