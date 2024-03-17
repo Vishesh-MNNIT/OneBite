@@ -75,8 +75,8 @@ const userPayment = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: "https://www.google.com/",
-      cancel_url: "https://www.facebook.com/",
+      success_url: "http://localhost:5173/paymentsuccess",
+      cancel_url: "http://localhost:5173/paymentfailure",
     });
 
     res.json({ id: session.id });

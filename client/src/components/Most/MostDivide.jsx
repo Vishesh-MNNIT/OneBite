@@ -1,7 +1,7 @@
 import React from "react";
 import "./MostDivide.css";
-//import img1 from "../../images/Banner/BuyerLogin.jpg";
-//import img2 from "../../images/Banner/Desert.jpg";
+import img1 from "../../images/Banner/BuyerLogin.jpg";
+import img2 from "../../images/Banner/Desert.jpg";
 import { Link } from "react-router-dom";
 
 export default function MostDivide() {
@@ -11,7 +11,7 @@ export default function MostDivide() {
         <div className="d-flex partsMostDivide">
           <div className="part1MostDivide d-flex justify-content-center align-item-center">
             <div className="bannerMostDivide">
-              //<img className="imageSetMostDivide" alt="" />
+              <img className="imageSetMostDivide" src={img1} alt="" />
               <button className="itemMostDivide">
                 <Link
                   style={{
@@ -29,7 +29,7 @@ export default function MostDivide() {
 
           <div className="part2MostDivide d-flex justify-content-center align-item-center">
             <div className="bannerMostDivide">
-              //<img className="imageSetMostDivide"  alt="" />
+              <img className="imageSetMostDivide" src={img2} alt="" />
               <button className="shopMostDivide">
                 <Link
                   style={{
