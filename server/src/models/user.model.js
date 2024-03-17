@@ -26,6 +26,10 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Password is required']
     },
+    points: {
+        type: Number,
+        default: 0
+    },
     refreshToken: {
         type: String
     }

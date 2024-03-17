@@ -22,8 +22,10 @@ function Demo() {
       );
       const data = await response.json();
       // Group items by product name
+      console.log(data);
       const groupedItems = groupItemsByProductName(data);
       setItems(groupedItems);
+      // console.log(items);
     } catch (error) {
       console.error("Error loading data:", error);
     }
@@ -64,6 +66,8 @@ function Demo() {
                   title={item.productName}
                   price={item.price}
                   shopName={item.shopName}
+                  rating= {item.rating}
+                  count={item.count}
                 // Pass the item ID to addToCart function
                 />
               ))}
