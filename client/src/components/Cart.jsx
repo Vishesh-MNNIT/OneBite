@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
+import "./Cart.css";
 
 export default function Cart() {
   const data = useCart();

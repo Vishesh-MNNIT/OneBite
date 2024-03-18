@@ -1,11 +1,12 @@
 .card2-container {
   position: relative;
-  width: 200px;
+  width: 300px;
   height: 200px;
   overflow: hidden;
-  border-radius: 50%; /* Make it circular */
-  border: 5px solid #000; /* Add thick black border */
+  border-radius: 20px; /* Reduce border-radius to make it squarish */
+  border: 10px solid #272525; /* Add thick black border */
   transition: transform 0.3s ease; /* Add transition effect */
+  margin: 20px;
 }
 
 .card2-container:hover {

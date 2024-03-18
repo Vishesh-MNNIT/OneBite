@@ -38,6 +38,7 @@ function BuyerLogin() {
       } else if (json.statusCode === 404) {
         alert("First Create Account");
       } else if (json.statusCode === 200) {
+        console.log("Hello");
         showSuccessToast(); // Show toast message on successful login
         navigate("/buyermain");
       }
