@@ -32,14 +32,14 @@ const generateAccessandRefereshTokens = async(userId) =>{
 const ownerInfoDetails = asyncHandler(async(req,res)=>{
      
     const {name} = req.body;
-   // console.log(req.body);
+   console.log(req.body);
     const shopImageLocalPath =  req.files?.image[0]?.path;
 
     const shopImage = await uploadOnCloudinary(shopImageLocalPath)
-
+    console.log(shopImage);
     const shopdetails =  await OwnerInfo.create({
         name: name,
-        image:shopImage.url
+        image:shopImage.url,
     })
      
     const options ={

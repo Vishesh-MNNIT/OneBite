@@ -6,10 +6,19 @@ import "./Card.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
+const Card = ({
+  itemId,
+  imageSrc,
+  title,
+  price,
+  shopName,
+  rating,
+  count,
+  shopkeeperId,
+}) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatchCart();
-
+  console.log(shopkeeperId);
   const handleQty = (e) => {
     setQty(e.target.value);
   };
@@ -18,6 +27,7 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
     toast.success("🛒Added to Cart"); // Toast message for successful login
   };
 
+  // console.log(shopkeeperId)
   const handleAddToCart = async () => {
     await dispatch({
       type: "ADD",
@@ -26,6 +36,7 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
       price: price,
       qty: qty,
       img: imageSrc,
+      shopkeeperId: shopkeeperId,
     });
     showSuccessToast();
   };

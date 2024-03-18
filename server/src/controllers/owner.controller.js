@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import { Owner } from "../models/owner.model.js";
-
+import { Item } from "../models/item.model.js";
 
 const registerOwner = asyncHandler(async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -91,7 +91,125 @@ const logoutOwner = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, {}, "User Logout Successfully"));
 });
 
+const orderItems = asyncHandler(async(req,res)=>{
+  let data = req.body.order_data;
+  console.log(data);
+})
+
+const submitForm = asyncHandler(async(req,res)=>{
+  try {
+  console.log(req.body);
+  const email = req.body.email;
+
+  // Find the owner with the given email
+  const owner = await Owner.findOne({ email });
+
+  // If owner is not found, return an error response
+  if (!owner) {
+    return res.json({
+      success: false,
+      message: "Signup first"
+    });
+  }
+
+  // Update owner's isSubmitted field and save the changes
+  if (owner.isSubmitted === false) { // Ensure that isSubmitted needs to be updated
+    owner.isSubmitted = true;
+    await owner.save();
+
+    // Respond with success message
+    return res.json({
+      success: true,
+      message: "Owner information updated successfully"
+    });
+  } else {
+    // If isSubmitted is already false, respond with a message indicating no changes were made
+    return res.json({
+      success: true,
+      message: "Owner information already up to date"
+    });
+  }
+} catch (error) {
+  // Handle any errors that occur during the process
+  console.error("Error updating owner information:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Internal server error"
+  });
+}
+})
+const setId= asyncHandler(async(req,res)=>{
+  try {
+  console.log(req.body);
+  const email = req.body.email;
+  const id = req.body.id;
+  // Find the owner with the given email
+  const owner = await Owner.findOne({ email });
+
+  // If owner is not found, return an error response
+  if (!owner) {
+    return res.json({
+      success: false,
+      message: "Signup first"
+    });
+  }
+
+  // Update owner's isSubmitted field and save the changes
+  
+    owner.id = id;
+    await owner.save();
+
+    // Respond with success message
+    return res.json({
+      success: true,
+      message: "Owner information updated successfully"
+    });
+} catch (error) {
+  // Handle any errors that occur during the process
+  console.error("Error updating owner information:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Internal server error"
+  });
+}
+})
+
+const orderDetails= asyncHandler(async(req,res)=>{
+  try {
+  console.log(req.body);
+  // const email = req.body.email;
+  const id = req.body.id;
+  console.log(id);
+  // Find the owner with the given email
+  const items = await Item.find({ shopkeeperId: id });
+  console.log(items)
+  // If owner is not found, return an error response
+  if (!items) {
+    return res.json({
+      success: false,
+      message: "Signup first"
+    });
+  }
+
+  // Update owner's isSubmitted field and save the changes
+  
+
+    // Respond with success message
+    return res.json({
+      items,
+      success: true,
+      message: "Items sent successfully"
+    });
+} catch (error) {
+  // Handle any errors that occur during the process
+  console.error("Error updating owner information:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Internal server error"
+  });
+}
+})
 
 
 
-export { registerOwner, loginOwner, logoutOwner };
+export { registerOwner, loginOwner, logoutOwner ,orderItems,submitForm,setId,orderDetails};

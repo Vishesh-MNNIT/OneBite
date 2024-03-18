@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar.jsx";
 import "./BuyerMain.css";
 import { Link } from "react-router-dom";
@@ -7,8 +7,27 @@ import img1 from "../../images/Banner/BowlC.jpg";
 import img2 from "../../images/Banner/BowlC2.jpg";
 import Footer from "../Footer.jsx";
 import MostDivide from "../Most/MostDivide.jsx";
+import { useNavigate } from "react-router-dom";
 
 function BuyerMain() {
+  const navigate = useNavigate();
+  
+
+  
+  const checktoken =()=>{
+    const accessToken = localStorage.getItem("accessToken")
+    if(!accessToken){
+      
+      navigate("/buyerlogin")
+      // alert("Please login first")
+    }
+  }
+
+  useEffect(()=>{
+    checktoken();
+  },[])
+
+
   return (
     <>
       <div className="mainDiv">

@@ -17,6 +17,7 @@ function BuyerLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await fetch("http://localhost:3000/api/v1/users/login", {
         method: "POST",
@@ -28,9 +29,14 @@ function BuyerLogin() {
           password: credentials.password,
         }),
       });
+      // console.log();
       const json = await response.json();
-      localStorage.setItem("userEmail", json.data.email);
+      console.log(json.data.accessToken);
+      localStorage.setItem("accessToken", json.data.accessToken);
 
+      localStorage.setItem("userEmail", json.data.user.email);
+      const email = localStorage.getItem("userEmail");
+      console.log(email);
       if (json.statusCode === 400) {
         alert("Enter Valid Credentials");
       } else if (json.statusCode === 401) {
@@ -38,7 +44,6 @@ function BuyerLogin() {
       } else if (json.statusCode === 404) {
         alert("First Create Account");
       } else if (json.statusCode === 200) {
-        console.log("Hello");
         showSuccessToast(); // Show toast message on successful login
         navigate("/buyermain");
       }
@@ -100,6 +105,19 @@ function BuyerLogin() {
                   <b>LOG IN</b>
                 </button>
               </form>
+
+              <Link
+                style={{
+                  color: "#0095f6",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  borderBottom: "1px solid #0095f6",
+                  paddingBottom: "2px",
+                }}
+                to="/forgot-password"
+              >
+                Forgot Password?
+              </Link>
 
               <p>
                 Create New Account

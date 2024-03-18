@@ -14,6 +14,7 @@ const OwnerAddItems = () => {
   });
 
   // Define the toast function
+  const ownerEmail = localStorage.getItem("ownerEmail");
   const showSuccessToast = () => {
     toast.success("Items Added Successfully"); // Toast message for successful login
   };
@@ -26,7 +27,19 @@ const OwnerAddItems = () => {
       formData.append("name", credentials.name);
       formData.append("price", credentials.price);
       formData.append("image", credentials.image);
-
+      const res = await fetch(
+        "http://localhost:3000/api/v1/owners/setId",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: ownerEmail,
+            id: id
+          }),
+        }
+      );
       const response = await fetch(
         "http://localhost:3000/api/v1/owners/itemsUpload",
         {

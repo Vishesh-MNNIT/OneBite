@@ -25,6 +25,10 @@ const itemSchema = new Schema({
   count: {
     type: Number,
     default: 0
+  },
+  totalCount:{
+    type: Number,
+    default: 0
   }
 });
 

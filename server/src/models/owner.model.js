@@ -18,6 +18,14 @@ const ownerSchema = new Schema(
       type: String,
       required: [true, "Password is required"],
     },
+    isSubmitted: {
+      type: Boolean,
+      default: false
+    },
+    id: {
+      type: String,
+      default: ""
+    },
     refreshToken: {
       type: String,
     },

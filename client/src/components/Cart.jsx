@@ -6,6 +6,7 @@ import "./Cart.css";
 
 export default function Cart() {
   const data = useCart();
+  console.log(data);
   const dispatch = useDispatchCart();
   const [totalPrice, setTotalPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
