@@ -1,0 +1,32 @@
+/* ContactUs.css */
+.contact-us-container {
+    background-image: url("../images/Contact.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 50px; /* Adjust as needed */
+    color: #000000; /* Text color */
+    margin-top: 60px;
+  }
+  
+  .contact-info,
+  .faq {
+    margin-bottom: 50px; /* Add space between sections */
+  }
+  
+  .contact-info h2,
+  .faq h2 {
+    font-size: 24px; /* Section headings font size */
+  }
+  
+  .contact-info p,
+  .faq p {
+    font-size: 18px; /* Paragraph font size */
+  }
+  
+  .faq-question {
+    margin-bottom: 20px; /* Add space between FAQ questions */
+  }
+  
+  .faq-question h3 {
+    font-size: 20px; /* FAQ question heading font size */
+  }
