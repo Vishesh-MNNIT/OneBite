@@ -67,6 +67,7 @@ function Demo() {
                   shopName={item.shopName}
                   rating={item.rating}
                   count={item.count}
+                  shopkeeperId={item.shopkeeperId}
                   // Pass the item ID to addToCart function
                 />
               ))}

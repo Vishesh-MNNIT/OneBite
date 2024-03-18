@@ -26,6 +26,7 @@ import MostSold from "./components/Most/MostSold.jsx";
 import MostRated from "./components/Most/MostRated.jsx";
 // import Contact from "./components/Contact.jsx";
 import Discount from "./components/Discount/Discount.jsx";
+import OwnerDashboard from "./components/OwnerDashboard/OwnerDashboard.jsx";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -54,6 +55,7 @@ ReactDOM.render(
           <Route path="mostrated" element={<MostRated />} />
           {/* <Route path="contact" element={<Contact />} /> */}
           <Route path="discount" element={<Discount />} />
+          <Route path="ownerdashboard" element={<OwnerDashboard />} />
         </Routes>
       </Router>
       <ToastContainer />

@@ -15,6 +15,7 @@ const OwnerForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    const ownerEmail = localStorage.getItem("ownerEmail");
     e.preventDefault();
     try {
       const formData = new FormData();
@@ -28,7 +29,20 @@ const OwnerForm = () => {
           body: formData,
         }
       );
-
+      const res = await fetch(
+        "http://localhost:3000/api/v1/owners/isSubmitted",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: ownerEmail
+          }),
+        }
+      );
+      const val = await res.json();
+      console.log(val);
       const json = await response.json();
       console.log(json.data._id);
       localStorage.setItem("id", json.data._id);

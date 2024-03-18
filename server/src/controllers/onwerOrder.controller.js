@@ -3,10 +3,35 @@ import { ApiResponse } from "../utils/apiResponse.js";
 import { OwnerOrder } from "../models/ownerOrder.model.js";
 import { User } from "../models/user.model.js";
 import Stripe from "stripe";
+import { Item } from "../models/item.model.js";
+// import { OwnerDashboard } from "../models/ownerDashboard.model.js";
+// import { OwnerDashboard } from "../models/ownerDashboard.model.js";
+import { Owner } from "../models/owner.model.js";
+
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 const userOrder = asyncHandler(async (req, res) => {
   let data = req.body.order_data;
+  //  console.log(data);
+    // Iterate through each item
+    try{
+
+      for (const item of data) {
+        const { id, name, qty, price, shopkeeperId , totalCount } = item;
+        console.log(qty);
+        const result = await Item.findByIdAndUpdate(
+  id, // The ID of the document to update
+  { $inc: { totalCount: qty } }, // Increment the totalCount field by qty
+  { new: true } // Return the updated document after the update
+);
+
+// console.log(result);
+
+      }
+    }catch(error){
+      console.log(error.message)
+    }
   await data.splice(0, 0, { Order_date: req.body.order_date });
   // console.log("1231242343242354",req.body.email)
   const email = req.body.email;

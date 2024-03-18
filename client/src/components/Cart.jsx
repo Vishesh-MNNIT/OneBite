@@ -5,6 +5,7 @@ import { useCart, useDispatchCart } from "../components/ContextReducer";
 
 export default function Cart() {
   const data = useCart();
+  console.log(data);
   const dispatch = useDispatchCart();
   const [totalPrice, setTotalPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
@@ -19,7 +20,7 @@ export default function Cart() {
     } else {
       points = 25;
     }
-
+    
     const addPoints = await fetch(
       "http://localhost:3000/api/v1/user/addPoints",
       {
@@ -32,17 +33,18 @@ export default function Cart() {
           points: points,
         }),
       }
-    );
-    const response = await addPoints.json();
-    const discountValue = response.discount;
-    setDiscount(discountValue);
-    totalPoints = await response.totalPoints;
-    // Calculate discounted total price
-    const totalPriceAfterDiscount = totalPrice - discountValue;
-    return totalPriceAfterDiscount;
-  };
-
-  const handleCheckOut = async () => {
+      );
+      const response = await addPoints.json();
+      const discountValue = response.discount;
+      setDiscount(discountValue);
+      totalPoints = await response.totalPoints;
+      // Calculate discounted total price
+      const totalPriceAfterDiscount = totalPrice - discountValue;
+      return totalPriceAfterDiscount;
+    };
+    
+    const handleCheckOut = async () => {
+    
     const totalPriceAfterDiscount = await handleDiscount(totalPrice);
 
     // Here goes your checkout logic with the discounted total price
@@ -58,7 +60,7 @@ export default function Cart() {
         order_date: new Date().toDateString(),
       }),
     });
-
+     
     const res = await fetch("http://localhost:3000/api/v1/user/payment", {
       method: "POST",
       headers: {

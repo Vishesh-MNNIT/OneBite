@@ -4,14 +4,15 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import "./Card.css";
 
-const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
+const Card = ({ itemId, imageSrc, title, price, shopName, rating, count , shopkeeperId}) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatchCart();
-
+  console.log(shopkeeperId)
   const handleQty = (e) => {
     setQty(e.target.value);
   };
-
+   
+  // console.log(shopkeeperId)
   const handleAddToCart = async () => {
     await dispatch({
       type: "ADD",
@@ -20,6 +21,7 @@ const Card = ({ itemId, imageSrc, title, price, shopName, rating, count }) => {
       price: price,
       qty: qty,
       img: imageSrc,
+      shopkeeperId: shopkeeperId,
     });
   };
 
