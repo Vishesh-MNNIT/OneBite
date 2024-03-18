@@ -11,9 +11,10 @@ const MainShop = () => {
   return (
     <div>
       <Navbar />
-      <h2>Selected Item Details</h2>
+
       <div className="mainShop-container">
-        <h1 style={{ marginTop: "20px" }}>ITEMS</h1>
+        {/* <h2 style={{ marginTop: "80px" }}>Selected Item Details</h2> */}
+        <h1 style={{ marginTop: "60px" }}>MENU</h1>
         <div className="card-container">
           {selectedItem.map((item) => (
             <Card

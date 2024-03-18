@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Discount.css";
+import Navbar from "../Navbar";
 
 const DiscountPage = () => {
   const [currentPoints, setCurrentPoints] = useState(0);
@@ -37,22 +38,27 @@ const DiscountPage = () => {
     loadData();
   });
   return (
-    <div className="discount-container">
-      <div className="points-info">
-        <h2>Your Current Points: {currentPoints}</h2>
-        <h2>Points Needed to Avail Discount: {pointsNeeded}</h2>
+    <>
+      <Navbar />
+      <div className="discount-container">
+        <div className="points-info">
+          <h2>Your Current Points: {currentPoints}</h2>
+          <h2>Points Needed to Avail Discount: {pointsNeeded}</h2>
+        </div>
+        <div className="rules-box">
+          <h2>Rules to Earn Points:</h2>
+          <ul>
+            <li>
+              If You Order in Range of $500 to $1000: You will Gain 15 points
+            </li>
+            <li>If You Order above $1000 or more: You will Gain 25 points</li>
+            <li>
+              After You Have More than 50 Point: Your Discount Amount : $50
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="rules-box">
-        <h2>Rules to Earn Points:</h2>
-        <ul>
-          <li>
-            If You Order in Range of $500 to $1000: You will Gain 15 points
-          </li>
-          <li>If You Order above $1000 or more: You will Gain 25 points</li>
-          <li>After You Have More than 50 Point: Your Discount Amount : $50</li>
-        </ul>
-      </div>
-    </div>
+    </>
   );
 };
 

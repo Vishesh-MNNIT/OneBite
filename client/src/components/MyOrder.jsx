@@ -7,6 +7,8 @@ import "./MyOrder.css";
 function MyOrder() {
   const [items, setItems] = useState([]);
 
+  const email = localStorage.getItem("userEmail");
+  console.log(email);
   const loadData = async () => {
     try {
       const response = await fetch(

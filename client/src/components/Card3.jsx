@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useDispatchCart } from "./ContextReducer";
-import {FaStar} from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import "./Card3.css";
 
-const Card3 = ({ itemId,imageSrc, title, price, shopName }) => {
+const Card3 = ({ itemId, imageSrc, title, price, shopName }) => {
   const [rating, setRating] = useState(0);
   const userEmail = localStorage.getItem("userEmail");
   //console.log(userEmail);
   console.log(itemId);
-const clickHandler= async()=>{
+  const clickHandler = async () => {
     try {
-    console.log(rating);
+      console.log(rating);
       const response = await fetch(
         "http://localhost:3000/api/v1/user/ratings",
         {
@@ -27,14 +27,14 @@ const clickHandler= async()=>{
       );
       const data = await response.json();
       console.log(data);
-    //   setItems(data.orderData.order_data);
+      //   setItems(data.orderData.order_data);
     } catch (error) {
       console.error("Error loading data:", error);
     }
-}
+  };
   const handleQty = (e) => {
     setRating(e.target.value);
-  }
+  };
 
   return (
     <div className="card3">
@@ -62,13 +62,25 @@ const clickHandler= async()=>{
                 </>
             )
           })} */}
-          <select className="m-2 h-100 w-20 bg-success text-black rounded" style={{ select: "#FF0000" }} onChange={handleQty}>
-              {Array.from(Array(5), (e, i) => {
-                return (
-                  <option key={i + 1} value={i + 1}>{i + 1}</option>)
-              })}
-            </select>
-        <button className={`btn btn-success justify-center ms-2 `} onClick={clickHandler}>Submit Rating</button>
+          <select
+            className="m-2 h-100 w-20 bg-success text-black rounded"
+            style={{ select: "#FF0000" }}
+            onChange={handleQty}
+          >
+            {Array.from(Array(5), (e, i) => {
+              return (
+                <option key={i + 1} value={i + 1}>
+                  {i + 1}
+                </option>
+              );
+            })}
+          </select>
+          <button
+            className={`btn btn-success justify-center ms-2 `}
+            onClick={clickHandler}
+          >
+            Submit Rating
+          </button>
         </div>
       </div>
     </div>

@@ -1,29 +1,27 @@
 import React from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "./ContextReducer";
 
-
 const Navbar = () => {
   //const items = useCart();
-  const navigate = useNavigate()
-  const handleLogout = async(e) => {
-    const token = localStorage.getItem('accessToken')
-    localStorage.removeItem("accessToken")
-    const response = await fetch("http://localhost:3000/api/v1/users/logout",{
-      
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          token:token
-        }),
-    })
-    
-    navigate("/buyerlogin")
-}
+  const navigate = useNavigate();
+  const handleLogout = async (e) => {
+    const token = localStorage.getItem("accessToken");
+    localStorage.removeItem("accessToken");
+    const response = await fetch("http://localhost:3000/api/v1/users/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token: token,
+      }),
+    });
+
+    navigate("/buyerlogin");
+  };
 
   return (
     <div>
@@ -49,11 +47,11 @@ const Navbar = () => {
                   About Us!
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/discount">
                   Discount
@@ -74,12 +72,8 @@ const Navbar = () => {
               </>
             </div>
             <div className="btn bg-white text-success mx-2 ">
-              
               <button onClick={handleLogout}>
-                <Link
-                  style={{ textDecoration: "none", color: "black" }}
-                  to="/"
-                >
+                <Link style={{ textDecoration: "none", color: "black" }} to="/">
                   LogOut
                 </Link>
               </button>
