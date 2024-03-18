@@ -39,9 +39,13 @@ const BuyerSignup = () => {
         alert("User already Exist");
       } else if (json.statusCode === 500) {
         alert("Something went wrong while registering the user");
+      }else if (json.statusCode === 411) {
+        alert("Enter valid gsuite address");
+      } else if (json.statusCode === 412) {
+        alert("Enter a strong password");
       } else if (json.statusCode === 200) {
-        // alert("User registered successfully");
-        navigate("/buyerlogin");
+        alert("User registered successfully");
+        // useNavigate(/buyerlogin)
       }
     } catch (error) {
       alert("Invalid credentials");
