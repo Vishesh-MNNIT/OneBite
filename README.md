@@ -22,6 +22,8 @@ Our platform serves as an e-commerce solution for ordering food directly from ca
 ![Logo](https://github.com/the-panshu/Personal_Website-HTML/blob/main/GIT%20IMAGE/discount.png)
 ![Logo](https://github.com/the-panshu/Personal_Website-HTML/blob/main/GIT%20IMAGE/byShop.png)
 ![Logo](https://github.com/the-panshu/Personal_Website-HTML/blob/main/GIT%20IMAGE/stripe.png)
+![Logo](https://github.com/the-panshu/Hospital/blob/main/GIT_UPLOAD/item.png)
+![Logo](https://github.com/the-panshu/Hospital/blob/main/GIT_UPLOAD/shop.png)
 
 
 ## Installation FrontEnd & Backend
