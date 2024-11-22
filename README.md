@@ -4,13 +4,14 @@
 Our platform serves as an e-commerce solution for ordering food directly from canteens. 
 ## CONTRIBUTORS
 
+ - Vishesh Agrawal
 - Ayush Singh Rajawat
 
 - Deepanshu Rajput
 
  - Ankush Kumar Sultaniya
 
- - Vishesh Agrawal
+
 
 
 ##
